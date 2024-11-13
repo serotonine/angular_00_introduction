@@ -11,6 +11,7 @@ By adding 'attr' in front of the attribute name you want to bind dynamically, yo
 * State
 * Zone.js vs Signal (<= Angular v.16)
 * Use `set` to update a value `this.selectedUser.set()` and use `selectedUser` as a function : `{{selectedUser().name}}`
+* computed (to use with signal)
 
 
 # Angular Introduction
