@@ -1,5 +1,16 @@
 ## What I learn
-OKLCH => new way of define color in CSS
+* OKLCH => new way of define color in CSS (experiment)
+* Component concept & config
+* String interpolation `{{}}`
+* Property binding (for attributes) `<img [src]='myValue'>`.
+By adding 'attr' in front of the attribute name you want to bind dynamically, you're "telling" Angular that it shouldn't try to find a property with the specified name but instead bind the respective attribute - in the example above, the aria-valuenow and aria-valuemax attributes would be bound dynamically.
+`[attr.aria-valuenow]="currentVal" 
+[attr.aria-valuemax]="maxVal"`
+* So called 'getter' : `get myValue(){return myValue}`
+* Event listeners `(click)="myMethod"` and Event handlers.
+* State
+* Zone.js vs Signal (<= Angular v.16)
+* Use `set` to update a value `this.selectedUser.set()` and use `selectedUser` as a function : `{{selectedUser().name}}`
 
 
 # Angular Introduction
