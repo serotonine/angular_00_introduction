@@ -1,24 +1,23 @@
-import { Component, Input, Output , EventEmitter} from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
 // Interface.
 import { type Task } from './task.model';
 // Pipe.
 import { DatePipe } from '@angular/common';
-
-
+// Service.
+import { TasksService } from '../tasks/tasks.service';
 
 @Component({
   selector: 'app-task',
   standalone: true,
   imports: [DatePipe],
   templateUrl: './task.component.html',
-  styleUrl: './task.component.scss'
+  styleUrl: './task.component.scss',
 })
 export class TaskComponent {
-  @Input({required: true}) task!:Task;
-  // Could be selectedTask = output<string>();
-  @Output() selectedTask = new EventEmitter<string>();
+  private taskService = inject(TasksService);
+  @Input({ required: true }) task!: Task;
   // Event handler.
-  onDeleteTask(){
-    this.selectedTask.emit(this.task.id);
+  onDeleteTask() {
+    this.taskService.deleteTask(this.task.id);
   }
 }
