@@ -1,8 +1,10 @@
 ## MODULE ARCHITECTURE.
 ### See [Resume](https://www.udemy.com/course/the-complete-guide-to-angular-2/learn/lecture/43797774#overview)
 
+* Create `@module` AppModule as root.
+* `platformBrowserDynamic` in main.ts
 
-# Angular Introduction
+
 * NodeJS with Homebreww `brew install node`
 * Angular cli (sudo) `npm i @angular/cli`
 * VS Code extensions : 
