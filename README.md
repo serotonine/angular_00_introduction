@@ -1,30 +1,6 @@
-## What I learn in this course.
-### See [Resume](https://www.udemy.com/course/the-complete-guide-to-angular-2/learn/lecture/43788666#overview)
-* OKLCH => new way of define color in CSS (experimental)
-* Component concept & config
-* String interpolation `{{}}`
-* Property binding (for attributes) `<img [src]='myValue'>`.
-By adding 'attr' in front of the attribute name you want to bind dynamically, you're "telling" Angular that it shouldn't try to find a property with the specified name but instead bind the respective attribute - in the example above, the aria-valuenow and aria-valuemax attributes would be bound dynamically.
-`[attr.aria-valuenow]="currentVal" 
-[attr.aria-valuemax]="maxVal"`
-* So called 'getter' : `get myValue(){return myValue}`
-* Event listeners `(click)="myMethod"` and Event handlers.
-* State
-* Zone.js vs Signal (<= Angular v.16)
-* Use `set` to update a value `this.selectedUser.set()` and use `selectedUser` as a function : `{{selectedUser().name}}`
-* computed (to use with signal)
-* Bind properties from parent to child with `@Input()` decorator.
-* Bind properties from child to parent with `@Output()` decorator.
-* New signal method  `input()` coupled with ``computed()``.
-* New method `output()`.
-* Use of ? and ! ```@Input() name?:string;```
-* Outsourcing; so-called ``type`` alias & `interface`.
-* Two-way binding `<input [(ngModel)]>`
-* Intro to `Directive` concept.
-* `<ng-content>`
-* Pipes
-* Dependency injections: Services.
-* Use localStorage in the tasks.service constructor.
+## MODULE ARCHITECTURE.
+### See [Resume](https://www.udemy.com/course/the-complete-guide-to-angular-2/learn/lecture/43797774#overview)
+
 
 # Angular Introduction
 * NodeJS with Homebreww `brew install node`
