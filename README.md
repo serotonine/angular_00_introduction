@@ -1,4 +1,5 @@
 ## What I learn in this course.
+### See [Resume](https://www.udemy.com/course/the-complete-guide-to-angular-2/learn/lecture/43788666#overview)
 * OKLCH => new way of define color in CSS (experimental)
 * Component concept & config
 * String interpolation `{{}}`
@@ -23,6 +24,7 @@ By adding 'attr' in front of the attribute name you want to bind dynamically, yo
 * `<ng-content>`
 * Pipes
 * Dependency injections: Services.
+* Use localStorage in the tasks.service constructor.
 
 # Angular Introduction
 * NodeJS with Homebreww `brew install node`

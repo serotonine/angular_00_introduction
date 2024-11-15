@@ -6,6 +6,7 @@ import { type Task } from '../task/task.model';
   providedIn: 'root',
 })
 export class TasksService {
+  
   // Data
   private _tasks = [
     {
@@ -32,6 +33,18 @@ export class TasksService {
       dueDate: '2024-06-15',
     },
   ];
+  constructor(){
+    const tasks = localStorage.getItem('tasks');
+    if(tasks){
+        this._tasks = JSON.parse(tasks);
+    }
+    else{
+      localStorage.setItem('tasks', JSON.stringify(this._tasks));
+    }
+  }
+  private _saveTasks(){
+    localStorage.setItem('tasks', JSON.stringify(this._tasks));
+  }
 
   getSelectedUserTasks(userId: string) {
     return this._tasks.filter((task) => task.userId === userId);
@@ -39,8 +52,10 @@ export class TasksService {
   deleteTask(id: string) {
     const tempTasks = this._tasks.filter((task) => task.id !== id);
     this._tasks = tempTasks;
+    this._saveTasks();
   }
   addTask(task: Task) {
     this._tasks.unshift(task);
+    this._saveTasks();
   }
 }
