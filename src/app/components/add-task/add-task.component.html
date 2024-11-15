@@ -1,0 +1,23 @@
+<div class="backdrop" (click)="onCloseDialog()"></div> 
+<dialog open>
+  <h2>Add Task</h2>
+  <form (ngSubmit)="onSubmit()">
+    <p>
+      <label for="title">Title</label>
+      <!-- Two-way binding syntax -->
+      <input type="text" autocomplete="on" id="title" name="title" [(ngModel)]="enteredTitle">
+    </p>
+    <p>
+      <label for="summary">Summary</label>
+      <textarea autocomplete="on" name="summary" id="summary" rows="5" [(ngModel)]="enteredSummary"></textarea>
+    </p>
+    <p>
+      <label for="due-date">Due Date</label>
+      <input autocomplete="on" type="date" id="due-date" name="due-date" [(ngModel)]="enteredDueDate">
+    </p>
+    <p class="actions">
+      <button type="button" (click)="onCloseDialog()">Cancel</button>
+      <button type="submit">Create</button>
+    </p>
+  </form>
+</dialog>

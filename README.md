@@ -1,5 +1,5 @@
-## What I learn
-* OKLCH => new way of define color in CSS (experiment)
+## What I learn in this course.
+* OKLCH => new way of define color in CSS (experimental)
 * Component concept & config
 * String interpolation `{{}}`
 * Property binding (for attributes) `<img [src]='myValue'>`.
@@ -12,7 +12,17 @@ By adding 'attr' in front of the attribute name you want to bind dynamically, yo
 * Zone.js vs Signal (<= Angular v.16)
 * Use `set` to update a value `this.selectedUser.set()` and use `selectedUser` as a function : `{{selectedUser().name}}`
 * computed (to use with signal)
-
+* Bind properties from parent to child with `@Input()` decorator.
+* Bind properties from child to parent with `@Output()` decorator.
+* New signal method  `input()` coupled with ``computed()``.
+* New method `output()`.
+* Use of ? and ! ```@Input() name?:string;```
+* Outsourcing; so-called ``type`` alias & `interface`.
+* Two-way binding `<input [(ngModel)]>`
+* Intro to `Directive` concept.
+* `<ng-content>`
+* Pipes
+* Dependency injections: Services.
 
 # Angular Introduction
 * NodeJS with Homebreww `brew install node`

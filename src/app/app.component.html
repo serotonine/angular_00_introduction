@@ -1,2 +1,16 @@
-<app-header/>
-<main><ul id="users"><li><app-user/></li></ul></main>
+<app-header />
+<main>
+  <ul id="users">
+    <!-- Only >= Angular 17 - else <li *ngFor="let user of users"> -->
+    @for(user of users; track user.id){
+    <li><app-user [user]="user" (select)="selectUserHandler($event)" [isSelected]="user.id === selectedUserId"/></li>
+    }
+
+  </ul>
+  <!-- Only >= Angular 17 - else <app-task $ngIf="selectedUser"[name]="selectedUser!.name" /> -->
+  <!-- <app-task $ngIf="selectedUser"[name]="selectedUser!.name" else fallback/> -->
+  <!-- <ng-template #fallback><p id="fallback">Select a user</p></ng-template> -->
+  @if(selectedUser){
+  <app-tasks [name]="selectedUser.name" [userId]="selectedUser.id"/>
+  }
+</main>

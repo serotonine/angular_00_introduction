@@ -1,0 +1,17 @@
+<section id="tasks">
+  <header>
+    <h2>{{name}}</h2>
+    <menu><button (click)="toggleIsAddTask()">Add Task</button></menu>
+  </header>
+  <main>
+    <ul>
+      @for(task of selectedUserTasks; track task.id){
+
+      <li> <app-task [task]="task" (selectedTask)="onDeleteTaskHandler($event)" /></li>
+      }
+    </ul>
+  </main>
+</section>
+@if(isAddTask){
+<app-add-task [userId]="userId" (closeDialog)="toggleIsAddTask()" />
+}

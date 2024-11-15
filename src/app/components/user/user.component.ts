@@ -1,6 +1,5 @@
-import { Component, signal, computed } from '@angular/core';
-// Data
-import { DUMMY_USERS } from '../../data/dummy-users';
+import { Component, Input, input, Output, output, EventEmitter } from '@angular/core';
+import { type User } from './user.model';
 
 @Component({
   selector: 'app-user',
@@ -10,16 +9,23 @@ import { DUMMY_USERS } from '../../data/dummy-users';
   styleUrl: './user.component.scss'
 })
 export class UserComponent {
- 
+  // ! => no need to init a value with a value.
+  @Input({required:true}) user!:User;
+  @Input({required:true}) isSelected!:boolean;
+  // Another declaration way with signal.
+  /* avatar<string>= input(); || avatar.required<string>(); */
+
   // So called getter.
-  get randUser(){return Math.floor(Math.random() * DUMMY_USERS.length)};
-  // Signal & computed.
- // selectedUser = signal(DUMMY_USERS[this.randUser]) ;
-  // Will be recalculated ONLY when the signal value change.
-  imgUrl = computed(() => `./assets/users/${this.selectedUser().avatar}`);
-  
+ get imgUri(){ return `./assets/users/${this.user.avatar}`; }
+ // With signal.
+/*  imgUri = computed(() =>`./assets/users/${this.avatar()}` ) */
+
   // Event handlers.
+ // @Output() select = new EventEmitter<string>();
+  // Angular 16 new feature.
+  select = output<string>();
+
   onSelectUser(){
-   // this.selectedUser.set(DUMMY_USERS[this.randUser]);
+    this.select.emit(this.user.id);
   }
 }

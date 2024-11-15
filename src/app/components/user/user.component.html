@@ -1,6 +1,7 @@
 <div>
-  <button [id]="selectedUser().id" (click)="onSelectUser()">
-    <img [src]="imgUrl()" [alt]="selectedUser().name"/>
-    <span>{{selectedUser().name}}</span>
+  <!-- with signal : name() -->
+  <button [id]="user.id" (click)="onSelectUser()" [class.active]="isSelected">
+    <img [src]="imgUri" [alt]="user.name"/>
+    <span>{{user.name}}</span>
   </button>
 </div>
